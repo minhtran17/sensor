@@ -1,0 +1,52 @@
+version: "2.4"
+
+services:
+  php-fpm:
+    build:
+      context: ./php-fpm
+      args:
+        - APP_ENV=development
+    container_name: web-php-fpm
+    working_dir: /var/www/web/
+    volumes:
+      - ../:/var/www/web/
+    networks:
+      - web
+
+  nginx:
+    build: nginx
+    container_name: web-nginx
+    ports:
+      - 80:80
+    volumes_from:
+      - php-fpm
+    working_dir: /var/www/web
+    depends_on:
+      - php-fpm
+    networks:
+      - web
+
+  mysql:
+    image: mysql
+    container_name: web-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+    networks:
+      - web
+
+  adminer:
+    image: adminer
+    container_name: web-adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
