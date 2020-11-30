@@ -8,12 +8,16 @@ make install-composer
 
 - Add `symfony.local` to `/etc/hosts`
 - Now you can acess to: http://symfony.local/app_dev.php or http://symfony.local/app.php
+- Adminer: http://localhost:8080
+  - username: root
+  - password: root
+  - database: symfony
 
 
 # Available commands
 Build image
 ```bash
-make build
+make up
 ```
 
 Migrate DB execution

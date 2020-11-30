@@ -8,7 +8,6 @@ down:
 	docker-compose -p ${PROJECT_NAME} -f environment/development.yml down
 	docker network remove web || true
 migrate:
-	docker exec web-php-fpm bash -c "php bin/console doctrine:database:drop --force || true"
 	docker exec web-php-fpm bash -c "php bin/console doctrine:database:create || true"
 	docker exec web-php-fpm bash -c "php bin/console doctrine:schema:update --force"
 install-composer:
