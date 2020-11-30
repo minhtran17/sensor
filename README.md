@@ -30,6 +30,10 @@ Stop and remove containers
 make down
 ```
 
+# DB relation
+
+![DB relation](https://github.com/minhtran17/sensor/blob/master/db_diagram.png)
+
 # API documentation
 - http://symfony.local/app_dev.php/api/doc
 
