@@ -1,4 +1,4 @@
-# Address book
+# CO2 Sensor
 
 # Installation
 ```bash
@@ -28,3 +28,5 @@ make down
 
 # API documentation
 - http://symfony.local/app_dev.php/api/doc
+
+![API doc](https://github.com/minhtran17/sensor/blob/master/apidoc.png)
