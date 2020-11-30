@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\AppBundle\Repository;
+namespace Tests\AppBundle\EventListener;
 
 use AppBundle\AppBundle;
 use AppBundle\Entity\Sensor;
@@ -8,12 +8,13 @@ use AppBundle\EventListener\CreateUpdateSetter;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Events;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * Class CreateUpdateSetterTest
  * @package Tests\AppBundle\Repository
  */
-class CreateUpdateSetterTest extends AbstractTest
+class CreateUpdateSetterTest extends WebTestCase
 {
     public function testFunctionExist()
     {
